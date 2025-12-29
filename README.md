@@ -38,21 +38,58 @@ A modern, real-time chat application built with React and NestJS, featuring a cl
 - Node.js (v16 or higher)
 - npm or yarn
 
-### Backend Setup
+### Clone the Repository
 
 \\\ash
+git clone https://github.com/docurev111/Chatroom-Activity-8.git
+cd Chatroom-Activity-8
+\\\
+
+### Backend Setup
+
+1. Navigate to backend directory:
+\\\ash
 cd backend
+\\\
+
+2. Install dependencies:
+\\\ash
 npm install
+\\\
+
+3. Create environment file (optional - uses defaults if not created):
+\\\ash
+# Copy the example file
+copy .env.example .env
+
+# Or create manually with these settings:
+# PORT=3000
+# DATABASE_PATH=./chatroom-john.sqlite
+\\\
+
+4. Start the development server:
+\\\ash
 npm run start:dev
 \\\
 
 The backend will start on \http://localhost:3000\
 
+**Note:** The database file \chatroom-john.sqlite\ will be automatically created in the backend folder on first run.
+
 ### Frontend Setup
 
+1. Open a new terminal and navigate to frontend directory:
 \\\ash
 cd frontend
+\\\
+
+2. Install dependencies:
+\\\ash
 npm install
+\\\
+
+3. Start the development server:
+\\\ash
 npm run dev
 \\\
 
@@ -106,12 +143,13 @@ http://localhost:3000/api/docs
 
 ##  Usage
 
-1. **Start the application** - Run both backend and frontend
-2. **Enter your username** - Choose any username to login
-3. **Create or join a room** - Click "New Room" or select an existing room
-4. **Start chatting** - Send messages in real-time
-5. **See typing indicators** - Know when others are typing
-6. **View message history** - All messages are saved
+1. **Start the application** - Run both backend and frontend (see installation steps above)
+2. **Access the app** - Open \http://localhost:5173\ in your browser
+3. **Enter your username** - Choose any username to login
+4. **Create or join a room** - Click "New Room" or select an existing room
+5. **Start chatting** - Send messages in real-time
+6. **See typing indicators** - Know when others are typing
+7. **View message history** - All messages are saved automatically
 
 ##  Project Structure
 
@@ -124,7 +162,9 @@ chatroom-activity-8/
        messages/      # Message handling
        entities/      # Database models
        main.ts        # Application entry
+    .env.example       # Environment variables template
     package.json
+    chatroom-john.sqlite  # Database (auto-created)
 
  frontend/
      src/
@@ -136,14 +176,20 @@ chatroom-activity-8/
 
 ##  Configuration
 
-### Backend Environment
-Create a \.env\ file in the backend directory (optional):
-\\\env
-PORT=3000
-\\\
+### Backend Environment Variables
+
+The backend uses these environment variables (defined in \.env\ or uses defaults):
+
+- \PORT\ - Server port (default: 3000)
+- \DATABASE_PATH\ - SQLite database file path (default: ./chatroom-john.sqlite)
 
 ### Frontend API Configuration
-The frontend is configured to connect to \http://localhost:3000\ by default. Modify \src/services/api.js\ and \src/services/socket.js\ to change this.
+
+The frontend is configured to connect to \http://localhost:3000\ by default. 
+
+To change the backend URL, modify:
+- \rontend/src/services/api.js\ - Change \API_URL\
+- \rontend/src/services/socket.js\ - Change \SOCKET_URL\
 
 ##  Key Features Explained
 
@@ -151,13 +197,31 @@ The frontend is configured to connect to \http://localhost:3000\ by default. Mod
 The app uses Socket.IO for bidirectional, event-based communication between clients and server, enabling instant message delivery.
 
 ### Persistent Storage
-Messages and rooms are stored in a SQLite database using TypeORM, ensuring data persists across server restarts.
+Messages and rooms are stored in a SQLite database (\chatroom-john.sqlite\) using TypeORM, ensuring data persists across server restarts.
 
 ### User Experience
 - **Consistent avatars** - Each user gets a unique emoji based on their username
 - **Message alignment** - Your messages on the right, others on the left
 - **Clean design** - No clutter, focus on conversation
 - **Smooth animations** - Professional feel with subtle transitions
+
+##  Troubleshooting
+
+### Backend won't start
+- Make sure port 3000 is not in use by another application
+- Check that all dependencies are installed: \
+pm install\
+- Verify Node.js version is 16 or higher: \
+ode --version\
+
+### Frontend won't connect
+- Ensure the backend is running first
+- Check that backend is accessible at \http://localhost:3000\
+- Clear browser cache and refresh
+
+### Database issues
+- The database file will be created automatically on first run
+- If you need a fresh start, delete \ackend/chatroom-john.sqlite\ and restart the backend
 
 ##  License
 
