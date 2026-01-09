@@ -1,6 +1,6 @@
 # Chatroom Application
 
-A real-time chat application built with React and NestJS, featuring WebSocket communication, MongoDB persistence, and a WhatsApp-inspired interface with animated 3D backgrounds.
+A real-time chat application built with React and NestJS, featuring WebSocket communication, MongoDB persistence, and animated 3D backgrounds.
 
 ## Overview
 
