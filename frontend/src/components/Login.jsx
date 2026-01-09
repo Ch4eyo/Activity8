@@ -15,7 +15,7 @@ function Login({ onLogin }) {
     <div className="login-container">
       <div className="login-card">
         <div className="login-header">
-          <h1>Welcome to Chatroom</h1>
+          <h1>Welcome to TalkTayo</h1>
           <p className="subtitle">Connect with friends and start chatting</p>
         </div>
         <form onSubmit={handleSubmit}>

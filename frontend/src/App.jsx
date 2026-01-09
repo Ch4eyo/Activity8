@@ -39,7 +39,7 @@ function App() {
       <div className="app">
         <div className="app-header">
           <div className="header-left">
-            <div className="app-logo">Chatroom</div>
+            <div className="app-logo">TalkTayo</div>
             <div className="app-tagline">Real-time messaging</div>
           </div>
           <div className="user-info">
