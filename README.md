@@ -1,6 +1,6 @@
 # TalkTayo
 
-A simple real-time chatroom application.
+A simple real-time chatroom application
 
 ## About
 
